@@ -1,0 +1,25 @@
+.imagen_info {
+    position: absolute;
+    right: 0;
+}
+
+.bot {
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+
+}
+
+p {
+
+    padding-right: 35vw;
+    margin-left: 0.7vw;
+    text-justify: left;
+    font-size: x-large;
+}

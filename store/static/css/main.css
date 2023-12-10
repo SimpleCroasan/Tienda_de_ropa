@@ -1,0 +1,46 @@
+.slideshow{
+    position: relative;
+}
+.slideshow img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+
+.left_button {
+    position: absolute;
+    top: 50%; /* Alinea verticalmente al centro del div contenedor */
+    left: 5%; /* Alinea horizontalmente al centro del div contenedor */
+    transform: translate(-50%, -50%); /* Centra el elemento */
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 150%;
+    padding: 0.7% ;
+    border-radius: 100%; /* Esquinas redondeadas */
+}
+
+.right_button {
+
+    position: absolute;
+    top: 50%; /* Alinea verticalmente al centro del div contenedor */
+    left: 95%; /* Alinea horizontalmente al centro del div contenedor */
+    transform: translate(-50%, -50%); /* Centra el elemento */
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 150%;
+    padding: 0.7% ;
+    border-radius: 100%; /* Esquinas redondeadas */
+}
+
+.right_button:hover, .left_button:hover{
+    transition: transform 0.3s ease;
+    background-color: #ffeee3;
+    transform: translate(-50%, -50%) scale(1.1); /* Escala el botón ligeramente al pasar el ratón */
+    transform-origin: center;
+}
+.right_button:not(:hover), .left_button:not(:hover){
+    transition: transform 0.3s ease;
+    transform: translate(-50%, -50%)
+}

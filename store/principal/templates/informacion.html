@@ -1,0 +1,80 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+{% block extrahead %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion</title>
+
+    <link rel="stylesheet" href="{% static '/css/Informacion.css' %}">
+    <link rel="stylesheet" href="{% static '/css/contenido.css' %}">
+
+</head>
+{% endblock extrahead%}
+
+<body>
+    {% block content %}
+    <div class="content">
+
+        <h1>¿Que es MCJeans?</h1>
+
+
+        <div class="imagen_info">
+
+
+            <img src="{% static '/img/informacion/rack-ropa-tienda_23-2148929537.webp' %}" id="img_index"
+                alt="Error cargando Imagen">
+
+
+
+        </div>
+
+
+        <p>En MCJeans, nuestra pasión por la moda se une con la comodidad y la calidad. Somos una marca dedicada a
+            ofrecerte las prendas de jean más trendy y versátiles para que te sientas confiado y a la moda en cualquier
+            ocasión.
+
+            Desde nuestro humilde comienzo, hemos trabajado incansablemente para crear prendas de jean que no solo
+            reflejen tu estilo personal, sino que también se adapten a tu estilo de vida en constante movimiento. Nos
+            enorgullecemos de la atención meticulosa a los detalles, la artesanía impecable y la elección de los
+            materiales de la más alta calidad para garantizar que cada par de jeans MCJeans sea una inversión en estilo
+            y durabilidad.
+
+            Nuestra misión es simple: ayudarte a lucir increíble en jeans que amarás usar. Trabajamos arduamente para
+            mantenernos al tanto de las tendencias actuales de la moda y, al mismo tiempo, preservamos el estilo clásico
+            que nunca pasa de moda. Ya sea que necesites un look casual para el día a día, un outfit elegante para una
+            noche especial o algo en medio, en MCJeans, tenemos el jean perfecto para ti.
+
+            Lo que nos distingue no son solo nuestros productos, sino también nuestra dedicación al servicio al cliente.
+            Valoramos la satisfacción de nuestros clientes y estamos comprometidos a brindar una experiencia de compra
+            excepcional. Siempre estamos dispuestos a escuchar tus comentarios y responder a tus preguntas.
+
+            MCJeans es más que una marca de ropa, somos una comunidad de amantes de la moda que comparten la misma
+            pasión por la versatilidad y la comodidad. Te invitamos a unirte a nuestra familia y a descubrir la
+            diferencia que hacen los jeans MCJeans en tu guardarropa.
+
+            Gracias por confiar en nosotros y por ser parte de nuestra historia. Estamos emocionados de ser parte de la
+            tuya.
+
+            ¡Bienvenido a MCJeans!
+
+        </p>
+
+
+        <div class="bot">
+
+
+            <p>Informacion de contacto: 3155332080</p>
+        </div>
+
+    </div>
+    {% endblock content%}
+
+</body>
+
+</html>

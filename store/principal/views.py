@@ -1,3 +1,65 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import render
+from django.http import HttpResponse    
+from .models import Producto
+from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+import datetime
+from django.contrib.auth import login
+from django.contrib import messages
+from django.urls import reverse_lazy
+from django.template import loader
+from django.shortcuts import redirect
+from .forms import NewUserForm
+
+def main(request):
+  
+    return render(request, 'index.html')
+
+def informacion(request):
+  
+    return render(request, 'informacion.html')
+
+def mujer(request):
+    producto = Producto.objects.all()
+    return render(request, 'mujer.html',{
+        'producto' : producto
+
+    })
+
+
+def hombre(request):
+    producto = Producto.objects.all()
+    return render(request, 'hombre.html',{
+        'producto' : producto
+
+    })
+
+def disenos(request):
+    producto = Producto.objects.all()
+    return render(request, 'disenos.html',{
+        'producto' : producto
+
+    })
+
+
+
+def registro(request):
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            messages.success(request, "Registro Exitoso")
+            return redirect('main')
+        messages.error(request,"No fue posible el Registro. Información Invalida")
+    form = NewUserForm()
+    context = {"register_form":form}
+    template = loader.get_template("register.html") 
+    return HttpResponse(template.render(context,request))
+
+def login(request):
+    return render(request, 'registration/login.html')

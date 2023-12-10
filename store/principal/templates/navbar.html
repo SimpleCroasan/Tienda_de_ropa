@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Menu.css' %}">
+    {% block extrahead %}
+    {% endblock extrahead%}
+</head>
+
+<body>
+
+    <div class="menu">
+        <input type="checkbox" id="toggle-menu">
+        <label for="toggle-menu" class="icon">&#9776;</label>
+        <ul class="menu li">
+            <a class="logo" href="{% url 'main' %}">MCJeans</a>
+            <li><a href="{% url 'disenos' %}">Diseños</a></li>
+            <li><a href="{% url 'hombre' %}">Hombre</a></li>
+            <li><a href="{% url 'mujer' %}">Mujer</a></li>
+            <li><a href="{% url 'informacion' %}">Informacion</a></li>
+            <li class="listaLogin"><a class="login" href="{% url 'login' %}">Iniciar sesion</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        {% block content %}
+        {% endblock content%}
+    </div>
+
+
+</body>
+
+</html>

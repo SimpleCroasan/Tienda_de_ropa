@@ -1,0 +1,63 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+{% block extrahead %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/css/contenido.css' %}">
+
+</head>
+{% endblock extrahead%}
+
+
+<body>
+
+    {% block content %}
+
+    <div class="content">
+        <h1>Bienvenidos a MCJeans</h1>
+
+        <div class="slideshow">
+            <img src="{% static '/img/index/imagen1.jpg' %}" id="img_index" alt="Error cargando Imagen">
+
+            <button class="left_button">&nbsp<&nbsp </button>
+                    <button class="right_button">&nbsp>&nbsp</button>
+        </div>
+
+
+        <div class="box_text">
+            <P>¿Quieres mantenerte al día con las últimas tendencias? Únete a nuestra comunidad en línea y descubre
+                inspiración, consejos de estilo y más. Comparte tus propios looks en denim y sé parte de la familia
+                MCJeans en nuestras redes sociales.</P>
+        </div>
+
+        <div class="box_text">
+            <P> </P>
+        </div>
+        <br><br><br>
+
+
+
+        <div class="bot">
+
+
+            <p>Informacion de contacto: 3155332080</p>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    {% endblock content%}
+
+</body>
+
+
+</html>

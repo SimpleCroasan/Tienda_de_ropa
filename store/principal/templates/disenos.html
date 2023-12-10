@@ -1,0 +1,64 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+{% block extrahead %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="stylesheet" href="{% static '/css/disenos.css' %}">
+    <link rel="stylesheet" href="{% static '/css/contenido.css' %}">
+
+</head>
+{% endblock extrahead%}
+
+<body>
+    {% block content %}
+    <div class="content">
+        <h1>Nuestros Diseños</h1>
+        <br>
+
+        <div class="imagenes">
+
+            {% for pro in producto %}
+
+            <figure>
+                <img width="400" height="240" src="{{ pro.Imagen.url }}" alt="prenda3">
+                <figcaption>
+                    <p class="prenda_title">{{pro.Nombre}}</p>
+                    <p class="prenda_precio">{{pro.Precio}}</p>
+                    <p class="prenda_descripcion">{{pro.Descripcion}}</p>
+                </figcaption>
+            </figure>
+
+
+            {% endfor %}
+
+
+
+        </div>
+        <br><br><br>
+
+
+
+
+        <div class="bot">
+
+
+            <p>Informacion de contacto: 3155332080</p>
+        </div>
+
+    </div>
+
+
+    </div>
+
+    {% endblock content%}
+
+</body>
+
+</html>
