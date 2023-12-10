@@ -61,5 +61,7 @@ def registro(request):
     template = loader.get_template("register.html") 
     return HttpResponse(template.render(context,request))
 
-def login(request):
-    return render(request, 'registration/login.html')
+
+def producto(request):
+  
+    return render(request, 'producto.html')
