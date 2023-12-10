@@ -12,5 +12,7 @@ urlpatterns=[
     path('diseños/',views.disenos, name="disenos"),
     path('registro/',views.registro,name='registro'),
     path('login/',views.registro,name='login'),
+    path('producto/<int:producto_id>/',views.producto,name='producto'),
+
 ]
 

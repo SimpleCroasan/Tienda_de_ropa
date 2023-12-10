@@ -62,6 +62,6 @@ def registro(request):
     return HttpResponse(template.render(context,request))
 
 
-def producto(request):
-  
-    return render(request, 'producto.html')
+def producto(request, producto_id):
+    producto = Producto.objects.get(id=producto_id)
+    return render(request, 'producto.html',{'producto':producto})

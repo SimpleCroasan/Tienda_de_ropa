@@ -1,5 +1,9 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
+{% block extrahead %}
 
 <head>
     <meta charset="UTF-8">
@@ -9,20 +13,21 @@
     <link rel="stylesheet" href="{% static '/css/contenido.css' %}">
 
 </head>
+{% endblock extrahead%}
 
 <body>
-
+    {% block content %}
 
 
     <div class="content">
 
         <div class="product-details">
-            <img class="product-image" src="https://i.pinimg.com/550x/fd/29/03/fd2903f878e1ad3ece9baa80f53d57a7.jpg"
-                alt="Imagen del producto">
+            <img class="product-image" src="{{ producto.Imagen.url }}" alt="Imagen del producto">
             <div class="product-info">
-                <h2 class="product-name">Camiseta para mujer</h2>
-                <h3>$70000</h3>
-                <p class="product-description">Descripción</p>
+                <h2 class="product-name">{{producto.Nombre}}</h2>
+                <h3>{{producto.Precio}}</h3>
+                <p class="product-description">{{producto.Descripcion}}</p>
+                <h2>unidades disponibles: {{producto.Unidades_disponibles}}</h2>
                 <button class="buy-button">Comprar</button>
             </div>
         </div>
@@ -48,9 +53,7 @@
         </div>
 
     </div>
-
+    {% endblock content%}
 </body>
-<script src="../JS/login.js"></script>
-<script src="../JS/main.js"></script>
 
 </html>

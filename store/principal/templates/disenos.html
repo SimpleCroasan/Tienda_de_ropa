@@ -25,16 +25,16 @@
         <div class="imagenes">
 
             {% for pro in producto %}
-
-            <figure>
-                <img width="400" height="240" src="{{ pro.Imagen.url }}" alt="prenda3">
-                <figcaption>
-                    <p class="prenda_title">{{pro.Nombre}}</p>
-                    <p class="prenda_precio">{{pro.Precio}}</p>
-                    <p class="prenda_descripcion">{{pro.Descripcion}}</p>
-                </figcaption>
-            </figure>
-
+            <a class="sobre" href="{% url 'producto' pro.id %}">
+                <figure>
+                    <img width="400" height="240" src="{{ pro.Imagen.url }}" alt="prenda3">
+                    <figcaption>
+                        <p class="prenda_title">{{pro.Nombre}}</p>
+                        <p class="prenda_precio">{{pro.Precio}}</p>
+                        <p class="prenda_descripcion">{{pro.Descripcion}}</p>
+                    </figcaption>
+                </figure>
+            </a>
 
             {% endfor %}
 
