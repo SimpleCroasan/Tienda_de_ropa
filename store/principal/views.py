@@ -14,7 +14,7 @@ from django.urls import reverse_lazy
 from django.template import loader
 from django.shortcuts import redirect
 from .forms import NewUserForm
-
+from .forms import ProductoForm
 def main(request):
   
     return render(request, 'index.html')
@@ -80,7 +80,7 @@ class UpdateProducto(UpdateView):
     fields=['Nombre','Descripcion','Precio','Unidades_disponibles','Imagen','categoria']
 
     def get_success_url(self):
-        return reverse_lazy('main')
+        return reverse_lazy('crud')
 
 
 class deleteProducto(DeleteView):
@@ -88,18 +88,21 @@ class deleteProducto(DeleteView):
     model= Producto
     
     def get_success_url(self):
-        return reverse_lazy('main')
+        return reverse_lazy('crud')
     
 
 def verProducto(request, producto_id):
     producto = Producto.objects.get(id=producto_id)
     return render(request,'ver.html',{'producto':producto})
 
-class crearProducto(CreateView):
-    template_name = 'nueva.html'
-    model = Producto
-    fields=['Nombre','Descripcion','Precio','Unidades_disponibles','Imagen','categoria']
 
-    def get_success_url(self):
-        return reverse_lazy('main')
-    
+def crearProducto(request):
+    if request.method == 'POST':
+        form = ProductoForm(request.POST, request.FILES)  
+        if form.is_valid():
+            form.save()
+            return redirect('crud')  
+    else:
+        form = ProductoForm()
+
+    return render(request, 'nueva.html', {'form': form})

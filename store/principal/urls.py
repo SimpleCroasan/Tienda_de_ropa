@@ -17,7 +17,7 @@ urlpatterns=[
     path('editar/<int:pk>',views.UpdateProducto.as_view(),name="editar" ),
     path('borrar/<int:pk>',views.deleteProducto.as_view(),name="borrar" ),
     path('ver/<int:producto_id>/', views.verProducto, name='ver'),
-    path('nuevo/',views.crearProducto.as_view(),name="view" ),
+    path('nuevo/',views.crearProducto,name="view" ),
     
 
 ]
