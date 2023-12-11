@@ -5,6 +5,75 @@
 
 {% block extrahead %}
 
+<style>
+    /* Estilos generales */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f5e6;
+        /* Tono entre blanco y amarillo muy suave */
+    }
+
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    /* Estilos de la tabla */
+    #tabla {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    #tabla th,
+    #tabla td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    #tabla th {
+        background-color: #f392bd;
+        /* Rosa pastel para el encabezado */
+        color: #fff;
+    }
+
+    /* Estilos de los botones */
+    button {
+        background-color: #78c7c7;
+        /* Verde pastel */
+        color: #fff;
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    /* Clases específicas para cada tipo de botón */
+    .clase2 {
+        background-color: #ffb347;
+        /* Naranja pastel */
+    }
+
+    .clase3 {
+        background-color: #dcb4c8;
+        /* Morado pastel */
+    }
+
+    /* Hover effect para los botones */
+    button:hover {
+        background-color: #5a5a5a;
+        /* Gris oscuro cuando se pasa el ratón sobre el botón */
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

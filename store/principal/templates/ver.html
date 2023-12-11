@@ -3,23 +3,66 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+{% block extrahead %}
 <style>
+    /* Estilos generales */
     body {
-        text-align: center;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f5e6;
+        /* Tono entre blanco y amarillo muy suave */
+    }
+
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        /* Fondo blanco */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Sutil sombra */
     }
 
     h1 {
-        color: blue;
-        margin: 10px 0;
+        color: #333;
     }
 
-    h2,
+    h2 {
+        color: #5a5a5a;
+        /* Gris oscuro */
+    }
+
     h3 {
-        color: black;
-        margin: 10px 0;
+        color: #78c7c7;
+        /* Verde pastel */
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 8px;
+    }
+
+    /* Estilos de espaciado y separación */
+    br {
+        margin-bottom: 10px;
+    }
+
+    /* Enlace de regreso */
+    a {
+        color: #78c7c7;
+        /* Verde pastel */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 </style>
-{% block extrahead %}
 
 <head>
     <meta charset="UTF-8">
