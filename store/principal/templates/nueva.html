@@ -1,0 +1,56 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block extrahead %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/contenido.css' %}">
+
+</head>
+{% endblock extrahead%}
+<style>
+    body {
+        text-align: center;
+    }
+
+    h1 {
+        color: blue;
+    }
+
+    form {
+        display: inline-block;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    input[type="submit"] {
+        background-color: blue;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    {% block content %}
+    <div class="content">
+        <h1>Nueva nota:</h1>
+        <form method="post">{% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Guardar">
+
+
+
+        </form>
+    </div>
+    {% endblock content%}
+
+</body>
+
+</html>

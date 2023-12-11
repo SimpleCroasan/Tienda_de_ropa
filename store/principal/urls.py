@@ -13,6 +13,12 @@ urlpatterns=[
     path('registro/',views.registro,name='registro'),
     path('login/',views.registro,name='login'),
     path('producto/<int:producto_id>/',views.producto,name='producto'),
+    path('crud/',views.lista_producto,name="crud" ),
+    path('editar/<int:pk>',views.UpdateProducto.as_view(),name="editar" ),
+    path('borrar/<int:pk>',views.deleteProducto.as_view(),name="borrar" ),
+    path('ver/<int:producto_id>/', views.verProducto, name='ver'),
+    path('nuevo/',views.crearProducto.as_view(),name="view" ),
+    
 
 ]
 

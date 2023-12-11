@@ -1,0 +1,122 @@
+{% extends 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% block extrahead %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/contenido.css' %}">
+
+</head>
+{% endblock extrahead%}
+
+<body>
+
+    {% block content %}
+    <div class="content">
+        <h1>Productos</h1>
+
+        <br>
+        <button onclick="window.location.href='{% url 'view' %}'" class="nuevo"> Nuevo Producto</button>
+
+        <table id="tabla">
+            <tr>
+                <th>NOMBRE</th>
+                <th>DESCRIPCION</th>
+                <th>PRECIO</th>
+                <th>ACCIONES</th>
+            </tr>
+
+            {% for pro in producto %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    nuevaFila("{{pro.Nombre}}", "{{pro.Descripcion}}", "{{pro.Precio}}", "{{pro.id}}");
+                });
+            </script>
+            {% endfor %}
+
+        </table>
+
+        <script>
+            function nuevaFila(Nombre, Descripcion, Precio, proId) {
+                let table = document.getElementById("tabla");
+                let row = table.insertRow(-1);
+                let c1 = row.insertCell(0);
+                let c2 = row.insertCell(1);
+                let c3 = row.insertCell(2);
+                let c4 = row.insertCell(3);
+
+                c1.innerText = Nombre;
+                c2.innerText = Descripcion;
+                c3.innerText = Precio
+
+                let button = document.createElement("button");
+                button.innerText = "ver ";
+                button.className = "clase"
+                c4.appendChild(button);
+                button.onclick = function () {
+
+                    redirigirNota2(proId);
+                };
+
+
+
+
+                let button2 = document.createElement("button");
+                button2.innerText = "editar ";
+                button2.className = "clase2"
+
+                button2.onclick = function () {
+
+                    redirigirNota(proId);
+                };
+
+                c4.appendChild(button2);
+
+                let button3 = document.createElement("button");
+                button3.innerText = "Borrar ";
+                button3.className = "clase3"
+                button3.onclick = function () {
+
+                    redirigirNota3(proId);
+                };
+
+                c4.appendChild(button3);
+
+
+
+                function redirigirNota(proId) {
+
+                    let url = `/editar/${proId}`;
+
+
+                    window.location.href = url;
+                }
+
+                function redirigirNota2(proId) {
+
+                    let url = `/ver/${proId}`;
+
+
+                    window.location.href = url;
+                }
+
+                function redirigirNota3(proId) {
+
+                    let url = `/borrar/${proId}`;
+
+
+                    window.location.href = url;
+                }
+
+
+            }
+        </script>
+    </div>
+    {% endblock content%}
+</body>
+
+</html>

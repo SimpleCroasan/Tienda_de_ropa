@@ -65,3 +65,41 @@ def registro(request):
 def producto(request, producto_id):
     producto = Producto.objects.get(id=producto_id)
     return render(request, 'producto.html',{'producto':producto})
+
+def lista_producto(request):
+    producto = Producto.objects.all()
+    return render(request, 'crud.html',{
+        'producto' : producto
+
+    })
+
+
+class UpdateProducto(UpdateView):
+    template_name = 'update.html'
+    model = Producto
+    fields=['Nombre','Descripcion','Precio','Unidades_disponibles','Imagen','categoria']
+
+    def get_success_url(self):
+        return reverse_lazy('main')
+
+
+class deleteProducto(DeleteView):
+    template_name ='borrar.html'
+    model= Producto
+    
+    def get_success_url(self):
+        return reverse_lazy('main')
+    
+
+def verProducto(request, producto_id):
+    producto = Producto.objects.get(id=producto_id)
+    return render(request,'ver.html',{'producto':producto})
+
+class crearProducto(CreateView):
+    template_name = 'nueva.html'
+    model = Producto
+    fields=['Nombre','Descripcion','Precio','Unidades_disponibles','Imagen','categoria']
+
+    def get_success_url(self):
+        return reverse_lazy('main')
+    
